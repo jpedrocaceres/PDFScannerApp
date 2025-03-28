@@ -1,0 +1,14 @@
+{
+    "java.debug.settings.exceptionBreakpoint.skipClasses": [
+        "$JDK/lib/src.zip!/java/lang/Thread.java",
+        "$JDK/lib/src.zip!/java/lang/ThreadGroup.java",
+        "$JDK/lib/src.zip!/java/lang/ClassLoader.java",
+        "$JDK/lib/src.zip!/java/lang/ClassLoader.java",
+        "$JDK/lib/src.zip!/java/lang/ClassLoader.java",
+        "$JDK/lib/src.zip!/java/lang/ClassLoader.java",
+        "$JDK/lib/src.zip!/java/lang/ClassLoader.java",
+    ],
+    "java.configuration.runtimes": [
+        
+    ]
+}

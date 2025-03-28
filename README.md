@@ -1,14 +1,48 @@
-# Welcome to your Expo app 👋
+# PDF Scanner App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile para digitalização de documentos e conversão para PDF.
 
-## Get started
+## Tecnologias Utilizadas
 
-1. Install dependencies
+### Frontend (Mobile)
+- React Native com Expo
+- React Native Camera
+- React Native PDF
+- TypeScript
+- Expo Image Picker
+- React Navigation
 
-   ```bash
+### Backend
+- Python 3.9+
+- FastAPI
+- Tesseract OCR
+- OpenCV
+- PyPDF2
+
+## Estrutura do Projeto
+
+```
+PDFScannerApp/
+├── mobile/                 # Aplicativo React Native
+│   ├── app/               # Telas do aplicativo
+│   ├── components/        # Componentes reutilizáveis
+│   ├── hooks/            # Custom hooks
+│   ├── services/         # Serviços de API
+│   └── utils/            # Funções utilitárias
+│
+└── backend/              # API Python
+    ├── app/             # Código principal
+    ├── services/        # Serviços de processamento
+    └── tests/           # Testes unitários
+```
+
+## Como Executar
+
+### Mobile
+1. Instale as dependências:
+```bash
    npm install
-   ```
+```
 
 2. Start the app
 
@@ -16,35 +50,66 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Use o app Expo Go no seu dispositivo Android para testar
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### Backend
+1. Crie um ambiente virtual:
 ```bash
-npm run reset-project
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Instale as dependências:
+```bash
+pip install -r backend\requirements.txt
+```
 
-## Learn more
+3. Inicie o servidor:
+```bash
+uvicorn app.main:app --reload
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Funcionalidades
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Captura de documentos via câmera
+- Processamento de imagem (remoção de ruído, correção de perspectiva)
+- Reconhecimento de texto (OCR)
+- Geração de PDF
+- Armazenamento local dos documentos
+- Compartilhamento de documentos
 
-## Join the community
+## Boas Práticas Implementadas
 
-Join our community of developers creating universal apps.
+1. **Clean Architecture**
+   - Separação clara de responsabilidades
+   - Código modular e testável
+   - Dependências bem definidas
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. **TypeScript**
+   - Tipagem estática para maior segurança
+   - Melhor autocompletar e documentação
+   - Redução de erros em runtime
+
+3. **Componentes Reutilizáveis**
+   - DRY (Don't Repeat Yourself)
+   - Manutenção mais fácil
+   - Consistência na UI
+
+4. **Testes**
+   - Testes unitários
+   - Testes de integração
+   - Testes de UI
+
+5. **Segurança**
+   - Validação de dados
+   - Sanitização de inputs
+   - Tratamento de erros
+
+## Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
